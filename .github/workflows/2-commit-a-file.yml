@@ -1,0 +1,68 @@
+name: Step 2 # ファイルをコミットする
+
+# 学習者がステップ2のタスクを完了したか確認します。
+# - ユーザーがブランチ 'my-first-branch' にプッシュし、ファイル 'PROFILE.md' を変更したときにトリガーされます。
+
+on:
+  push:
+    branches:
+      - "my-first-branch"
+    paths:
+      - "PROFILE.md"
+
+permissions:
+  contents: read
+  actions: write
+  issues: write
+
+env:
+  STEP_3_FILE: ".github/steps/3-open-a-pull-request.md"
+
+jobs:
+  find_exercise:
+    name: 演習のIssueを検索
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+    with:
+      issue-title-text: "演習: "
+
+  post_next_step_content:
+    name: 次のステップの内容を投稿
+    needs: [find_exercise]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: コメントを作成 - ステップ完了
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          file: .github/step-feedback/step-finished-prepare-next-step.md
+          vars: |
+            next_step_number: 3
+
+      - name: コメントを作成 - ステップ内容を追加
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.STEP_3_FILE }}
+
+      - name: コメントを作成 - 進捗を監視中
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: .github/step-feedback/watching-for-progress.md
+
+      - name: 現在のワークフローを無効化し、次を有効化
+        run: |
+          gh workflow disable "${{github.workflow}}"
+          gh workflow enable "Step 3"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
