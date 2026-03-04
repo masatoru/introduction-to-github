@@ -6,7 +6,7 @@ _素晴らしい！ :sunglasses:_
 
 **マージとは？**: _[マージ](https://docs.github.com/ja/get-started/quickstart/github-glossary#merge)_ は、プルリクエストとブランチの変更を `main` ブランチに追加します。マージについて詳しくは、「[プルリクエストのマージ](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)」をご覧ください。
 
-![緑色のプルリクエストマージボタンのスクリーンショット](../images/merge-pull-request-button.png)
+![緑色のプルリクエストマージボタンのスクリーンショット](https://github.com/masatoru/introduction-to-github/blob/main/.github/images/merge-pull-request-button.png?raw=true)
 
 ### :keyboard: アクティビティ: プルリクエストをマージする
 
@@ -20,7 +20,7 @@ _素晴らしい！ :sunglasses:_
 
 3. ブランチがマージされたら、そのブランチはもう不要です。ブランチを削除するには、**Delete branch** をクリックしてください。
 
-   ![ブランチ削除ボタンのスクリーンショット](../images/delete-branch-button.png)
+   ![ブランチ削除ボタンのスクリーンショット](https://github.com/masatoru/introduction-to-github/blob/main/.github/images/delete-branch-button.png?raw=true)
 
 4. 作業がマージされると、Monaが確認し、最終レビューの内容を共有します。お疲れ様でした！
 <details>
