@@ -1,13 +1,21 @@
-# GitHub 入門
+<div align="center">
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+# 🎉 masatoru さん、おつかれさまでした 🎉
 
-masatoru さん、こんにちは！
+<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
-Monaです。演習の準備ができました。Issueに沿って、ひとつずつ進めていきましょう💚
+### 🌟 演習を無事に完了しました 🌟
 
+このリポジトリの操作手順を一通り体験できました。
 
-[![](https://img.shields.io/badge/%E6%BC%94%E7%BF%92%E3%82%92%E9%96%8B%E3%81%8F-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/masatoru/introduction-to-github/issues/1)
+### 🎯 次にやってみること
+
+[![](https://img.shields.io/badge/Issue%E3%81%AB%E6%88%BB%E3%82%8B-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/masatoru/introduction-to-github/issues/1)
+[![GitHub Skills](https://img.shields.io/badge/GitHub%20Skills%E3%82%92%E7%B6%9A%E3%81%91%E3%82%8B-000000?style=for-the-badge&logo=github&logoColor=white)](https://learn.github.com/skills)
+
+*学習は、実際に手を動かすのがいちばんです* 🚀
+
+</div>
 
 ---
 
